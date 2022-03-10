@@ -1,3 +1,49 @@
+# import tkinter as tk
+
+
+# def up():
+#     global number
+#     number += 1
+#     clicker()
+# def down():
+#     global number
+#     number -= 1
+#     clicker()
+
+# def clicker():
+#     global number,label1
+#     if number < 0:
+#         window.config(bg='red')
+#     elif number > 0 :
+#         window.config(bg='green')
+#     elif number == 0:
+#         window.config(bg='grey')
+#     labstr = tk.StringVar(value=f'{number}')
+#     label1.config(textvariable=labstr)
+# def click(event):
+#     global number
+#     print('clicked')
+#     if up :
+#         number = number * 3
+#     elif down :
+#         number = number / 3
+
+
+# window = tk.Tk()
+# window.geometry('300x300')
+
+# number = 0 
+# label1 = tk.Label( text= f'{number}',width=20)
+# label1.place(anchor='center',relx=0.5,rely = 0.5)
+# button1 = tk.Button(text='Up')
+# button2 = tk.Button(text='Down')
+# button1.pack(side=tk.TOP)
+# button2.pack(side=tk.BOTTOM)
+# window.bind("<Double-Button-1>",click)
+
+# clicker()
+# window.mainloop()
+
 import tkinter as tk 
 #=================== funtions hier onder=================================
 def up():
@@ -46,6 +92,8 @@ button1.pack(side=tk.TOP)
 button2.pack(side=tk.BOTTOM)
 button1.config(command=up)
 button2.config(command=down)
+button1.bind("+",up)
+button2.bind("-",down)
 lab.bind("<Double-Button-1>",Dclick)
 clicker()
 
