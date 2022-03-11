@@ -1,12 +1,12 @@
 import tkinter as tk 
 #=================== funtions hier onder=================================
-def up(higher):
+def up():
     global number,keer
     number += 1
     print(number)
     keer = True
     clicker()
-def down(lower):
+def down():
     global number, keer
     number -= 1
     print(number)
@@ -35,23 +35,17 @@ def Dclick(event):
 #==================== window/labels/buttons setup hieronder====================
 keer = False
 number = 0
-
 win = tk.Tk()
 win.geometry('300x150')
-
 lab = tk.Label( text= f'{number:.0f}',width=20)
 lab.config(bg='white')
-lab.place(anchor='center',relx=0.5,rely = 0.5)
-
 button1 = tk.Button(text='Up',width=20)
 button2 = tk.Button(text='Down',width=20)
+lab.place(anchor='center',relx=0.5,rely = 0.5)
 button1.pack(side=tk.TOP)
 button2.pack(side=tk.BOTTOM)
 button1.config(command=up)
 button2.config(command=down)
-
-win.bind("+",up)
-win.bind("-",down)
 lab.bind("<Double-Button-1>",Dclick)
 clicker()
 
